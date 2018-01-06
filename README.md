@@ -26,12 +26,12 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
 
 ## Built With
 
-  *HTML
-  *CSS
-  *JavaScript
-  *Node
-  *Express & numerous Node modules
-  *'They Said So' Quote API
+  * HTML
+  * CSS
+  * JavaScript
+  * Node
+  * Express & numerous Node modules
+  * 'They Said So' Quote API
 
 ### Versioning
 
