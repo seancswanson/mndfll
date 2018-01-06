@@ -26,12 +26,12 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
 
 ## Built With
 
-  HTML
-  CSS
-  JavaScript
-  Node
-  Express & numerous Node modules
-  'They Said So' Quote API
+  *HTML
+  *CSS
+  *JavaScript
+  *Node
+  *Express & numerous Node modules
+  *'They Said So' Quote API
 
 ### Versioning
 
@@ -51,7 +51,7 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
 ### Acknowledgments
 
 1. A hat tip to General Assembly Seattle's WDI-16 Instruction team for constant love and support during the program!
-2. Inspiration coming from the '5-Minute-Journal' team, who programmed the first journaling app that was my foray into introspective reflection and the practice of gratitude.
+2. Inspiration coming from the '_5-Minute-Journal_' team, who programmed the first journaling app that was my foray into introspective reflection and the practice of gratitude.
 3. _**"You"**_ for visiting this repo and being so lovely.
 
 -
