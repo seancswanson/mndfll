@@ -1,0 +1,151 @@
+body {
+  font-family: "EB Garamond";
+}
+
+nav {
+  background-color: #6d8764;
+}
+
+.page-footer, .footer-copyright {
+  background-color: #6d8764 !important;
+  padding-top: 5px !important;
+}
+
+.btn-large {
+  background-color: white !important;
+  color: #404040;
+  font-size: 20px !important;
+}
+
+.div--landing {
+  margin-top: 40px;
+  color: #404040;
+  -webkit-animation: fadein 1s linear;
+  -moz-animation: fadein 1s linear;
+  -ms-animation: fadein 1s linear;
+  -o-animation: fadein 1s linear;
+  animation: fadein 1s linear;
+}
+
+.div--buttons__center {
+  position: relative !important;
+  left: 17px !important;
+}
+
+.card--landing {
+  background-color: #87646d;
+}
+
+.card--landing p {
+  font-size: 17px;
+}
+
+.card .card-title {
+    font-size: 25px;
+}
+
+.img--landing__yang {
+  max-width: 150px;
+  position: relative;
+  left: 17px;
+  -webkit-animation: rotation 10s infinite linear;
+  -moz-animation: rotation 10s infinite linear;
+  -ms-animation: rotation 10s infinite linear;
+  -o-animation: rotation 10s infinite linear;
+  animation: rotation 10s infinite linear;
+}
+
+.span--landing__title {
+  margin-left: 25px;
+  font-size: 70px;
+  letter-spacing: 4px;
+  border-top: 4px double black;
+  border-bottom: 4px double black;
+}
+
+.span--landing__subtitle {
+  font-size: 30px;
+  font-style: italic;
+  position: relative;
+  left: 17px;
+}
+
+.nav--header__wide {
+  display: none;
+  margin: 0;
+  position: relative;
+  left: 42.80%;
+  width: 300px;
+  letter-spacing: 5px;
+  -webkit-animation: fadein 1s linear;
+  -moz-animation: fadein 1s linear;
+  -ms-animation: fadein 1s linear;
+  -o-animation: fadein 1s linear;
+  animation: fadein 1s linear;
+}
+
+#dropdown1 {
+  top: 57px !important;
+  right: 0 !important;
+  left: initial !important;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #404040 !important;
+  font-size: 20px;
+  text-transform: lowercase !important;
+}
+
+.brand-logo {
+  margin-left: 25px;
+}
+
+.material-icons {
+  font-size: 50px !important;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 601px) {
+  #dropdown1 {
+    top: 65px !important;
+  }
+  .dropdown-content li>a, .dropdown-content li>span {
+    font-size: 24px !important;
+  }
+}
+
+/* Animation */
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    -o-opacity: 0;
+    opacity: 0;
+  }
+  to {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+}
