@@ -87,8 +87,6 @@ nav {
   left: 17px;
 }
 
-
-
 /* Login/Signup View*/
 
 
@@ -201,10 +199,6 @@ nav {
 
 .waves-effect.waves-new .waves-ripple {
   background-color: rgba(104,35,96,.9);
-}
-
-.waves-effect.waves-plum .waves-ripple {
-  background-color: rgba(135,100,109,0.65);
 }
 
 /* Journal/New View*/
