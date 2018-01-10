@@ -5,12 +5,16 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: rgb(250,235,215);
+  background-color: #FFE4C4;
 }
 
  main {
      flex: 1 0 auto;
  }
+
+.div--alpha {
+  background:  rgba(255,255,255,.8) !important;
+}
 
 .gray-text {
   color: #404040;;
@@ -26,7 +30,8 @@ nav {
   display: none;
   margin: 0;
   position: relative;
-  left: 42.80%;
+  left: 90px;
+  top: -4px;
   width: 300px;
   letter-spacing: 5px;
 }
@@ -62,11 +67,13 @@ nav {
 }
 
 .card--landing p {
-  font-size: 17px;
+  font-size: 20px;
+  margin-top: 10px !important;
 }
 
 .card .card-title {
-    font-size: 25px;
+    font-size: 26px;
+    letter-spacing: 2px;
 }
 
 .img--landing__yang {
@@ -132,6 +139,16 @@ nav {
 .div--container__journal {
   color: #404040;
   margin-bottom: 40px;  
+}
+
+table {
+  margin-bottom: 25px !important;
+}
+
+table.striped>tbody>tr:nth-child(odd) {
+   background-color: rgba(135,100,109,0.1) !important;
+   border-right: 2px solid rgba(135,100,109,0.1);
+;
 }
 
 .columns--journal {
@@ -253,6 +270,10 @@ margin-bottom: 0 !important;
 }
 /* Journal/New View*/
 
+#button--delete {
+  background-color: rgba(217, 30, 24,.8) !important;
+}
+
 .div--container__create {
   color: #404040;
   margin-bottom: 40px;  
@@ -340,6 +361,9 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
   width: 100% !important;
 }
 
+#form--journal__new > div:nth-child(9) > div {
+  width: 100% !important;
+}
 
 .textarea--journal__musings::placeholder {
   color: rgba(63,63,63,1);

@@ -1,15 +1,21 @@
 $( document ).ready(function(){
+
+  console.log('hi');
   $(".dropdown-button").dropdown();
   
-  document.getElementById('a--input__submit').addEventListener("click", function(e){
-    e.preventDefault();
-    document.getElementById('form--journal__new').submit();
-    console.log('clicked');
-  });
-
-
   $('.modal').modal();
   
+  $('.button--delete').submit(function(e){
+    console.log('Delete button clicked');
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: 'DELETE'
+    }).done(function(){
+      window.location.href = '/journal/all';
+    });
+  });
+
   $('.modal-trigger').modal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background

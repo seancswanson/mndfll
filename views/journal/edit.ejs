@@ -2,7 +2,7 @@
 <%- include ../partials/quote %>
 
 
-<div class="div--container__create container z-depth-3 fadein">
+<div class="div--container__create container z-depth-3 fadein div--alpha">
   <div class="section">
     <div class="row">
       <div class="col s11">
@@ -12,26 +12,26 @@
     </div>
     <div class="container">
       <div class="section">
-        <form id="form--journal__new" action="/journal/<%= post.id %>" class="col s12">
+        <form id="form--journal__edit" action="/journal/<%= post.id %>" class="col s12">
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="" type="text">
-                <label for="">Where are you?</label>
+                <input id="" name="location" type="text">
+                <label for="location">Where are you?</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="" type="text">
-                <label for="">How do you feel today?</label>
+                <input id="" name="mood" type="text">
+                <label for="mood">How do you feel today?</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="" type="text">
-                <label for="">What is your intention or goal?</label>
+                <input id="" name="goal" type="text">
+                <label for="goal">What is your intention or goal?</label>
               </div>
             </div>
 
@@ -43,22 +43,22 @@
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="" type="text">
-                <label for="">1.</label>
+                <input id="" name="priority1" type="text">
+                <label for="priority">1.</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="" type="text">
-                <label for="">2.</label>
+                <input id="" name="priority2" type="text">
+                <label for="priority2">2.</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="" type="text">
-                <label for="">3.</label>
+                <input id="" name="priority3" type="text">
+                <label for="priority3">3.</label>
               </div>
             </div>
 
@@ -70,13 +70,16 @@
             
             <div class="row">
               <div class="input-field col s12">
-                <textarea class="textarea--journal__musings" id="" name="" type="text" placeholder="...perhaps a poem or a limerick?"></textarea>
+                <textarea class="textarea--journal__musings" id="" name="notes" type="text" placeholder="...perhaps a poem or a limerick?"></textarea>
               </div>
             </div>
 
             <div class="row">
-              <div class="col s9">
-                <a id="a--input__submit" class="btn-large btn--create waves-effect waves-plum waves-ripple"><i class="fa fa-plus-circle i--circle__create" aria-hidden="true"></i>Post</a>
+              <div class="col s3">
+                <a href="/journal/all" class="btn btn-large waves-effect waves-plum waves-ripple"><i class="fa fa-long-arrow-left i--circle__create" aria-hidden="true"></i><span>Return to journal</span></a>
+              </div>
+              <div class="col s3 offset-s1">
+                <a id="a--input__edit" class="btn-large waves-effect waves-plum waves-ripple"><i class="fa fa-pencil i--circle__create" aria-hidden="true"></i>Update</a>
               </div>
             </div>
 

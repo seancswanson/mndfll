@@ -22,7 +22,8 @@ router.post('/all', function(req,res) {
     priority1: req.body.priority1,
     priority2: req.body.priority2,
     priority3: req.body.priority3,
-    notes: req.body.notes
+    notes: req.body.notes,
+    userId: 1
   }).then(function(){
     res.redirect('journal/all');
   }).catch(function(err) {
@@ -31,6 +32,7 @@ router.post('/all', function(req,res) {
   }); 
   // create to post model
 });
+
 
 router.get('/new', function(req,res) {
   res.render('journal/new')
@@ -50,10 +52,32 @@ router.get('/view/:id', function(req,res) {
   // Get this one post from id
 });
 
-router.get('/edit:/:id', function(req,res) {
-  // res.render('journal/edit');
-  res.send('Editing post view');
-  // edit form for post from id
+
+router.delete('/view/:id', function(req,res){
+  console.log('Delete route. ID= ', req.params.id);
+  db.post.destroy({
+    where: { id: req.params.id }
+  }).then(function(deleted){
+    console.log('deleted = ', deleted);
+    res.send('success');
+  }).catch(function(err){
+    console.log('An error happened', err);
+    res.send('fail');
+  })
+});
+
+router.get('/edit/:id', function(req,res) {
+  db.post.findOne({
+    where: {id: req.params.id},
+    include: [db.user]
+  }).then(function(post){
+    res.render('journal/edit', {post:post});
+  }).catch(function(err) {
+    console.log('Catch reached, err was ', err);
+    res.status(500).send('Uh oh! :(');
+  }); 
+  // res.render('journal/single')
+  // Get this one post from id
 });
 
 router.put('/view/:id',function(req,res) {
