@@ -1,67 +1,66 @@
+<%- include ../partials/postlogin-nav %>
+<%- include ../partials/quote %>
+
 <div class="div--container__create container z-depth-3 fadein">
   <div class="section">
     <div class="row">
       <div class="col s11">
-        <span class="span--journal__title">
+        <span class="span--single__title"> <%= moment((toString(post.dataValues.createdAt)).value).format("MMM Do YY"); %>
         </span>
       </div>
     </div>
     <div class="container">
       <div class="section">
 
-            <div class="row">
+            <div class="row div--single__row">
               <div class="input-field col s12">
-                <label for="">Where were you?</label>
+                <p class="p--single__label">Where were you?</p>
+                <p class="p--single__body"><%= post.location %></p>
               </div>
             </div>
 
-            <div class="row">
+            <div class="row div--single__row">
               <div class="input-field col s12">
-                <label for="">How do you feel today?</label>
+                <p class="p--single__label">How did you feel this day?</p>
+                <p class="p--single__body"><%= post.mood %></p>
               </div>
             </div>
 
-            <div class="row">
+            <div class="row div--single__row">
               <div class="input-field col s12">
-                <label for="">What is your intention or goal?</label>
+                <p class="p--single__label">What was your intention or goal?</p>
+                <p class="p--single__body"><%= post.goal %></p>
+              </div>
+            </div>
+            <div class="row div--single__row">
+              <div class="input-field col s9">
+                <p class="p--single__label">3 things needed to be done that day:</p>
+                <p class="p--single__label">1.</p>
+                <p class="p--single__body"><%= post.priority1 %></p>
               </div>
             </div>
 
-            <div class="row">
+            <div class="row div--single__row">
+              <div class="input-field col s9">
+                <p class="p--single__label">2.</p>
+                <p class="p--single__body"><%= post.priority2 %></p>
+              </div>
+            </div>
+
+            <div class="row div--single__row">
+              <div class="input-field col s9">
+                <p class="p--single__label">3.</p>
+                <p class="p--single__body"><%= post.priority3 %></p>
+              </div>
+            </div>
+
+            <div class="row div--single__row">
               <div class="input-field col s12">
-                <label for="">3 things needed to be done today:</label>
+                <p class="p--single__label">Any additional musings that came to mind...</p>
+                <p class="p--single__body"><%= post.notes %></p>
               </div>
             </div>
 
-            <div class="row">
-              <div class="input-field col s9 offset-s1">
-                <label for="">1.</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s9 offset-s1">
-                <label for="">2.</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s9 offset-s1">
-                <label for="">3.</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <label for="">Any additional musings that came to mind...</label>
-
-              </div>
-            </div>
-            
-            <div class="row">
-              <div class="input-field col s12">
-              </div>
-            </div>
 
 <!--             <div class="row">
               <div class="col s9">

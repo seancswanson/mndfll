@@ -2,7 +2,15 @@
 
 body {
   font-family: "EB Garamond";
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: rgb(250,235,215);
 }
+
+ main {
+     flex: 1 0 auto;
+ }
 
 .gray-text {
   color: #404040;;
@@ -87,10 +95,7 @@ nav {
   left: 17px;
 }
 
-
-
 /* Login/Signup View*/
-
 
 .btn-large {
   background-color: white !important;
@@ -207,7 +212,47 @@ nav {
   background-color: rgba(135,100,109,0.65);
 }
 
+/* Journal/Single View*/
+
+body > main > div > div > div.container > div > div *  {
+margin-bottom: 0 !important;
+}
+
+.span--single__title {
+  font-size: 40px;
+  margin-left: 20px;
+  border-bottom: 4px double black;
+  letter-spacing: 3px;
+}
+
+.p--single__label {
+ font-size: 27px;
+ position: relative !important;
+ top: -10px !important;
+}
+
+.p--single__body {
+ font-size: 23px;
+ color: black;
+ position: relative !important;
+ top: -10px !important;
+ left: 10px !important;
+ letter-spacing: 2px;
+ background-color: rgba(135,100,109,0.2);
+ border-left: 2px solid rgba(135,100,109,0.4);
+ padding: 10px;
+ border-radius: 5px;
+}
+
+.p--single__notes {
+ font-size: 18px;
+ color: black;
+ position: relative !important;
+ top: -10px !important;
+ left: 10px !important;
+}
 /* Journal/New View*/
+
 .div--container__create {
   color: #404040;
   margin-bottom: 40px;  
@@ -240,14 +285,14 @@ nav {
 }
 
 .input-field label {
-  color: rgba(63,63,63,1);
-  font-size: 15px;
+  color: black;
+  font-size: 18px;
   letter-spacing: 2px;
 }
 
 .input-field input {
-  color: rgba(60,60,60,1);
-  font-size: 20px !important;
+  color: black;
+  font-size: 22px !important;
   letter-spacing: 2px;
 }
 
@@ -259,8 +304,6 @@ nav {
 .input-field>.active {
   color: rgba(63,63,63,1) !important;
 }
-
-
 
 .span--modal__title {
   font-size: 25px;
@@ -285,9 +328,12 @@ nav {
 }
 
 .textarea--journal__musings {
+  color: black;
   margin-top: 10px !important;
   resize: vertical !important;
-  min-height: 100px !important
+  min-height: 100px !important;
+  padding: 10px 15px !important;
+  font-size: 22px !important;
 }
 
 body > div.div--container__create.container.z-depth-3.fadein > div > div.container > div.section > form > div:nth-child(9) > div {
@@ -296,10 +342,11 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
 
 
 .textarea--journal__musings::placeholder {
-  color: rgba(63,63,63,.9);
+  color: rgba(63,63,63,1);
   letter-spacing: 3px;
   position: relative !important;
   left: 40px !important;
+  font-size: 16px !important;
 }
 
 .p--modal__body {
@@ -332,7 +379,6 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
   background-color: #6d8764 !important;
   padding-top: 5px !important;
 }
-
 
 .material-icons {
   font-size: 50px !important;

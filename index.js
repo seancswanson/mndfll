@@ -8,6 +8,7 @@ var flash = require('connect-flash');
 // var isLoggedIn = require('./middleware/isLoggedIn');
 // var passport = require('./config/passportConfig');
 var session = require('express-session');
+var moment = require('moment');
 var db = require("./models");
 var table = require('cli-table');
 var colors = require('colors');
@@ -34,6 +35,11 @@ app.use(express.static(__dirname + '/public/'));
 //   res.locals.alerts = req.flash();
 //   next();
 // });
+
+app.use(function(req,res,next){
+  res.locals.moment = moment;
+  next();
+});
 
 app.get('/', function(req, res){
   res.render('home');

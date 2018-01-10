@@ -32,14 +32,15 @@
       </thead>
 
       <tbody class="rows--journal">
+
+        <% posts.forEach(function(posts){ %>
+
         <tr class="rows--journal__hover">
-          <td><a href="/journal/:id">January 8, 2018</a></td>
-          <td><a href="/journal/:id">Happy + killed it today in school! La croix master cleanse pug, banjo neutra artisan roof party. Glossier air plant tumblr brunch, craft beer copper mug PBR&B adaptogen brooklyn organic cred YOLO.</a></td>
+          <td><a href="/journal/view/<%= posts.dataValues.id %>"><%= moment((toString(posts.dataValues.createdAt)).value).format("MMM Do YY"); %></a></td>
+          <td><a href="/journal/view/<%= posts.dataValues.id %>"><%= posts.dataValues.mood + " + " + posts.dataValues.notes %></a></td>
         </tr>
-        <tr class="rows--journal__hover">
-          <td><a href="/journal/:id">January 9, 2018</a></td>
-          <td><a href="/journal/:id">Motivated + woke up super early! Fashion axe kogi sriracha literally, paleo quinoa taiyaki leggings waistcoat flexitarian readymade meh butcher normcore.</a></td>
-        </tr>
+
+         <%})%>
       </tbody>      
     </table>
 

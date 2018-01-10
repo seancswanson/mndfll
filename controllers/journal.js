@@ -1,15 +1,34 @@
 var express = require('express');
+var moment = require('moment');
 var router = express.Router();
 var db = require("../models");
 
 
 router.get('/all', function(req,res) {
-  res.render('journal/all');
+  db.post.findAll({
+    include: [db.user]
+  }).then(function(posts){
+    res.render('journal/all', {posts:posts});
+  })
+  // posts[0].dataValues.id
   // findAll from post model
 });
 
 router.post('/all', function(req,res) {
-  res.redirect('journal/all');
+  db.post.create({
+    location: req.body.location,
+    mood: req.body.mood,
+    goal: req.body.goal,
+    priority1: req.body.priority1,
+    priority2: req.body.priority2,
+    priority3: req.body.priority3,
+    notes: req.body.notes
+  }).then(function(){
+    res.redirect('journal/all');
+  }).catch(function(err) {
+    console.log('Catch reached, err was ', err);
+    res.status(500).send('Uh oh! :(');
+  }); 
   // create to post model
 });
 
@@ -18,7 +37,16 @@ router.get('/new', function(req,res) {
 });
 
 router.get('/view/:id', function(req,res) {
-  res.render('journal/single')
+  db.post.findOne({
+    where: {id: req.params.id},
+    include: [db.user]
+  }).then(function(post){
+    res.render('journal/single', {post:post});
+  }).catch(function(err) {
+    console.log('Catch reached, err was ', err);
+    res.status(500).send('Uh oh! :(');
+  }); 
+  // res.render('journal/single')
   // Get this one post from id
 });
 
