@@ -10,8 +10,6 @@ router.get('/all', function(req,res) {
   }).then(function(posts){
     res.render('journal/all', {posts:posts});
   })
-  // posts[0].dataValues.id
-  // findAll from post model
 });
 
 router.post('/all', function(req,res) {
@@ -30,9 +28,7 @@ router.post('/all', function(req,res) {
     console.log('Catch reached, err was ', err);
     res.status(500).send('Uh oh! :(');
   }); 
-  // create to post model
 });
-
 
 router.get('/new', function(req,res) {
   res.render('journal/new')
@@ -48,10 +44,7 @@ router.get('/view/:id', function(req,res) {
     console.log('Catch reached, err was ', err);
     res.status(500).send('Uh oh! :(');
   }); 
-  // res.render('journal/single')
-  // Get this one post from id
 });
-
 
 router.delete('/view/:id', function(req,res){
   console.log('Delete route. ID= ', req.params.id);
@@ -76,8 +69,6 @@ router.get('/edit/:id', function(req,res) {
     console.log('Catch reached, err was ', err);
     res.status(500).send('Uh oh! :(');
   }); 
-  // res.render('journal/single')
-  // Get this one post from id
 });
 
 router.put('/view/:id',function(req,res) {

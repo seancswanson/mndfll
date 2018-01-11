@@ -1,36 +1,50 @@
 <%- include ../partials/postlogin-nav %>
 <%- include ../partials/quote %>
 
+   
+
+  <% var dateString = post.dataValues.createdAt; %>
+  <% var dateObj = new Date(dateString); %>
+  <% var momentObj = moment(dateObj); %>
+  <% var momentString = momentObj.format('MMM[.] Do[,] [\']YY') %>
+  <% var postId = post.dataValues.id; %>
+  <% var postLocation = post.dataValues.location %>
+  <% var postMood = post.dataValues.mood %>
+  <% var postGoal = post.dataValues.goal %>
+  <% var postNotes = post.dataValues.notes %>
+  <% var postP1 = post.dataValues.priority1 %>
+  <% var postP2 = post.dataValues.priority2 %>
+  <% var postP3 = post.dataValues.priority3 %>
 
 <div class="div--container__create container z-depth-3 fadein div--alpha">
   <div class="section">
     <div class="row">
       <div class="col s11">
-        <span class="span--journal__title">Edit this entry
+        <span class="span--journal__title"><%= momentString %>
         </span>
       </div>
     </div>
     <div class="container">
       <div class="section">
-        <form id="form--journal__edit" action="/journal/<%= post.id %>" class="col s12">
+        <form id="form--journal__edit" method="POST" action="/journal/view/<%= post.id %>" class="col s12">
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="location" type="text">
-                <label for="location">Where are you?</label>
+                <input id="" name="location" type="text" value="<%= postLocation %>">
+                <label for="location">Where were you?</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="mood" type="text">
+                <input id="" name="mood" type="text" value="<%= postMood %>">
                 <label for="mood">How do you feel today?</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="goal" type="text">
+                <input id="" name="goal" type="text" value="<%= postGoal %>">
                 <label for="goal">What is your intention or goal?</label>
               </div>
             </div>
@@ -43,21 +57,21 @@
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="priority1" type="text">
+                <input id="" name="priority1" type="text" value="<%= postP1 %>">
                 <label for="priority">1.</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="priority2" type="text">
+                <input id="" name="priority2" type="text" value="<%= postP2 %>">
                 <label for="priority2">2.</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="priority3" type="text">
+                <input id="" name="priority3" type="text" value="<%= postP3 %>">
                 <label for="priority3">3.</label>
               </div>
             </div>
@@ -70,7 +84,7 @@
             
             <div class="row">
               <div class="input-field col s12">
-                <textarea class="textarea--journal__musings" id="" name="notes" type="text" placeholder="...perhaps a poem or a limerick?"></textarea>
+                <textarea class="textarea--journal__musings" id="" name="notes" type="text" placeholder="<%= postNotes %>" value=""></textarea>
               </div>
             </div>
 

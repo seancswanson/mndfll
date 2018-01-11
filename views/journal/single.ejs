@@ -1,6 +1,19 @@
 <%- include ../partials/postlogin-nav %>
 <%- include ../partials/quote %>
 
+  <% var dateString = post.dataValues.createdAt; %>
+  <% var dateObj = new Date(dateString); %>
+  <% var momentObj = moment(dateObj); %>
+  <% var momentString = momentObj.format('MMM[.] Do[,] [\']YY') %>
+  <% var postId = post.dataValues.id; %>
+  <% var postLocation = post.dataValues.location %>
+  <% var postMood = post.dataValues.mood %>
+  <% var postGoal = post.dataValues.goal %>
+  <% var postNotes = post.dataValues.notes %>
+  <% var postP1 = post.dataValues.priority1 %>
+  <% var postP2 = post.dataValues.priority2 %>
+  <% var postP3 = post.dataValues.priority3 %>
+
 <div class="div--container__create container z-depth-3 fadein div--alpha">
   <div class="section">
     <div class="row">
@@ -15,49 +28,49 @@
             <div class="row div--single__row">
               <div class="input-field col s12">
                 <p class="p--single__label">Where were you?</p>
-                <p class="p--single__body"><%= post.location %></p>
+                <p class="p--single__body"><%= postLocation %></p>
               </div>
             </div>
 
             <div class="row div--single__row">
               <div class="input-field col s12">
                 <p class="p--single__label">How did you feel this day?</p>
-                <p class="p--single__body"><%= post.mood %></p>
+                <p class="p--single__body"><%= postMood %></p>
               </div>
             </div>
 
             <div class="row div--single__row">
               <div class="input-field col s12">
                 <p class="p--single__label">What was your intention or goal?</p>
-                <p class="p--single__body"><%= post.goal %></p>
+                <p class="p--single__body"><%= postGoal %></p>
               </div>
             </div>
             <div class="row div--single__row">
               <div class="input-field col s9">
                 <p class="p--single__label">3 things needed to be done that day:</p>
                 <p class="p--single__label">1.</p>
-                <p class="p--single__body"><%= post.priority1 %></p>
+                <p class="p--single__body"><%= postP1 %></p>
               </div>
             </div>
 
             <div class="row div--single__row">
               <div class="input-field col s9">
                 <p class="p--single__label">2.</p>
-                <p class="p--single__body"><%= post.priority2 %></p>
+                <p class="p--single__body"><%= postP2 %></p>
               </div>
             </div>
 
             <div class="row div--single__row">
               <div class="input-field col s9">
                 <p class="p--single__label">3.</p>
-                <p class="p--single__body"><%= post.priority3 %></p>
+                <p class="p--single__body"><%= postP3 %></p>
               </div>
             </div>
 
             <div class="row div--single__row">
               <div class="input-field col s12">
                 <p class="p--single__label">Any additional musings that came to mind...</p>
-                <p class="p--single__body"><%= post.notes %></p>
+                <p class="p--single__body"><%= postNotes %></p>
               </div>
             </div>
 

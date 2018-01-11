@@ -396,6 +396,11 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
   top: -80px !important;
 }
 
+/* Journal/Edit View*/
+
+#form--journal__edit > div:nth-child(9) > div {
+  width: 100% !important;
+}
 
 /* Footer */
 
