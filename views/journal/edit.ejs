@@ -26,25 +26,25 @@
     </div>
     <div class="container">
       <div class="section">
-        <form id="form--journal__edit" method="POST" action="/journal/view/<%= post.id %>" class="col s12">
+        <form id="form--journal__edit" action="/journal/view/<%= post.id %>" method="PUT" class="col s12">
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="location" type="text" value="<%= postLocation %>">
+                <input id="newLocation" name="location" type="text" value="<%= postLocation %>">
                 <label for="location">Where were you?</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="mood" type="text" value="<%= postMood %>">
+                <input id="newMood" name="mood" type="text" value="<%= postMood %>">
                 <label for="mood">How do you feel today?</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="" name="goal" type="text" value="<%= postGoal %>">
+                <input id="newGoal" name="goal" type="text" value="<%= postGoal %>">
                 <label for="goal">What is your intention or goal?</label>
               </div>
             </div>
@@ -57,21 +57,21 @@
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="priority1" type="text" value="<%= postP1 %>">
+                <input id="newP1" name="priority1" type="text" value="<%= postP1 %>">
                 <label for="priority">1.</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="priority2" type="text" value="<%= postP2 %>">
+                <input id="newP2" name="priority2" type="text" value="<%= postP2 %>">
                 <label for="priority2">2.</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s9 offset-s1">
-                <input id="" name="priority3" type="text" value="<%= postP3 %>">
+                <input id="newP3" name="priority3" type="text" value="<%= postP3 %>">
                 <label for="priority3">3.</label>
               </div>
             </div>
@@ -84,7 +84,7 @@
             
             <div class="row">
               <div class="input-field col s12">
-                <textarea class="textarea--journal__musings" id="" name="notes" type="text" placeholder="<%= postNotes %>" value=""></textarea>
+                <textarea class="textarea--journal__musings" id="newNotes" name="notes" type="text" placeholder="<%= postNotes %>" value=""></textarea>
               </div>
             </div>
 
@@ -92,8 +92,10 @@
               <div class="col s3">
                 <a href="/journal/all" class="btn btn-large waves-effect waves-plum waves-ripple"><i class="fa fa-long-arrow-left i--circle__create" aria-hidden="true"></i><span>Return to journal</span></a>
               </div>
+
               <div class="col s3 offset-s1">
-                <a id="a--input__edit" class="btn-large waves-effect waves-plum waves-ripple"><i class="fa fa-pencil i--circle__create" aria-hidden="true"></i>Update</a>
+                <input type="submit" class="a--input__edit
+btn-large waves-effect waves-plum waves-ripple" value="Update">
               </div>
             </div>
 
@@ -102,3 +104,5 @@
     </div>
   </div>
 </div>
+
+<%- include ../partials/documentEndEdit %>

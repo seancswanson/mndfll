@@ -9,12 +9,15 @@ module.exports = (sequelize, DataTypes) => {
     priority3: DataTypes.STRING,
     notes: DataTypes.TEXT,
     userId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        models.post.belongsTo(models.user);
-      }
-    }
+  // }, {
+  //   classMethods: {
+  //     associate: function(models) {
+  //       models.post.belongsTo(models.user);
+  //     }
+  //   }
   });
+  post.associate = function(models) {
+    models.post.belongsTo(models.user);
+  };
   return post;
 };
