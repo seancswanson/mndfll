@@ -34,12 +34,12 @@ router.post('/signup', function(req, res, next){
       //Good job, you didn't try to make a duplicate!
       passport.authenticate('local', {
         successRedirect: '/journal/all',
-        successFlash: 'Successfully logged in'
+        successFlash: 'Successfully logged in!'
       })(req, res, next);
     }
     else {
       //Bad job, you tried to sign up when you should login
-      req.flash('error', 'Email already exists');
+      req.flash('error', 'Email already exists.');
       res.redirect('/auth/login');
     }
   }).catch(function(err){

@@ -2,8 +2,7 @@ $( document ).ready(function(){
 
   console.log('app.js running');
 
-// quote of the day
-
+  setTimeout(function(){$('#div--card__alert').fadeOut();}, 2000);
 
   $(".dropdown-button").dropdown();
   $('.modal').modal();

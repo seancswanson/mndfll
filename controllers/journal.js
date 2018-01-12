@@ -62,28 +62,36 @@ router.get('/new', isLoggedIn, function(req,res) {
   });
 });
 
-router.get('/view/:id', function(req,res) {
+router.get('/view/:id', isLoggedIn, function(req,res) {
   db.post.findOne({
     where: {id: req.params.id},
     include: [db.user]
   }).then(function(post){
-  var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
-  request(quoteURL, function(error, response, body) {
-    var quoteObj = JSON.parse(body);
-    console.log(quoteObj);
-    var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
-    res.render('journal/single', { 
-      post:post,
-      quoteOfTheDay: quoteOfTheDay
+    var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
+    request(quoteURL, function(error, response, body) {
+      try {
+        var quoteObj = JSON.parse(body);
+        console.log(quoteObj);
+        var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
+        res.render('journal/single', {
+          post:post,
+          quoteOfTheDay: quoteOfTheDay
+        });
+      }
+      catch (err){
+        res.render('journal/single', {
+          post:post,
+          quoteOfTheDay: '"Victory comes from finding opportunity in problems" - Sun Tzu'
+        });
+      }
     });
-  })
-}).catch(function(err) {
+  }).catch(function(err) {
     console.log('Catch reached, err was ', err);
     res.status(500).send('Uh oh! :(');
   }); 
 });
 
-router.delete('/view/:id', function(req,res){
+router.delete('/view/:id', isLoggedIn, function(req,res){
   console.log('Delete route. ID= ', req.params.id);
   db.post.destroy({
     where: { id: req.params.id }
@@ -96,26 +104,34 @@ router.delete('/view/:id', function(req,res){
   })
 });
 
-router.get('/edit/:id', function(req,res) {
+router.get('/edit/:id', isLoggedIn, function(req,res) {
   db.post.findOne({
     where: {id: req.params.id},
     include: [db.user]
   }).then(function(post){
-  var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
-  request(quoteURL, function(error, response, body) {
-    var quoteObj = JSON.parse(body);
-    console.log(quoteObj);
-    var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
-    res.render('journal/edit', {
-      post:post,
-      quoteOfTheDay: quoteOfTheDay
-      });
-    })
-  }).catch(function(err) {
+var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
+    request(quoteURL, function(error, response, body) {
+      try {
+        var quoteObj = JSON.parse(body);
+        console.log(quoteObj);
+        var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
+        res.render('journal/all', {
+          post:post,
+          quoteOfTheDay: quoteOfTheDay
+        });
+      }
+      catch (err){
+        res.render('journal/all', {
+          post:post,
+          quoteOfTheDay: '"Victory comes from finding opportunity in problems" - Sun Tzu'
+        });
+      }
+    }).catch(function(err) {
       console.log('Catch reached, err was ', err);
       res.status(500).send('Uh oh! :(');
     }); 
-});
+  });
+}); 
 
 // router.put('/view/:id',function(req,res) {
 //   console.log('PUT route!');

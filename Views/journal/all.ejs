@@ -10,8 +10,8 @@
         </span>
       </div>
       <div class="col s3">
-        <a href="/journal/new" class="gray-text"><i class="fa fa-pencil i--journal__new waves-effect waves-new waves-ripple" aria-hidden="true"></i>         
-        <span class="hide-on-med-and-down span--journal__new">add entry</span>
+        <a href="/journal/new" class="gray-text">
+          <i class="fa fa-pencil i--journal__new waves-effect waves-new waves-ripple" aria-hidden="true"></i>         
         </a>
       </div>
     </div>
@@ -24,36 +24,40 @@
     </div>
   </div>
   <div class="section">
+    <div class="divider"></div>
+      <table class="striped bordered centered">
 
-    <table class="striped bordered centered">
+        <tbody class="rows--journal">
+         <% if(posts.length >= 1) { %>
+          <thead class="columns--journal">
+            <th>Date</th>
+            <th>Mood + Notes</th>
+          </thead>
+          <% posts.forEach(function(posts){ %> 
 
-      <thead class="columns--journal">
-        <th>Date</th>
-        <th>Mood + Notes</th>
-      </thead>
+          <% var dateString = posts.dataValues.createdAt; %>
+          <% var dateObj = new Date(dateString); %>
+          <% var momentObj = moment(dateObj); %>
+          <% var momentString = momentObj.format('MMM[.] Do[,] [\']YY') %>
+          <% var postId = posts.dataValues.id; %>
+          <% var postMood = posts.dataValues.mood %>
+          <% var postNotes = posts.dataValues.notes %>
 
-      <tbody class="rows--journal">
 
-        <% posts.forEach(function(posts){ %> 
+          <tr class="rows--journal__hover">
+            <td><a class="black-text a--journal__date" href="/journal/view/<%= postId %>"><%= momentString %></a></td>
+            <td><a class="black-text" href="/journal/view/<%= postId %>"><%= postMood + " + " + postNotes %></a></td>
+          </tr>
 
-        <% var dateString = posts.dataValues.createdAt; %>
-        <% var dateObj = new Date(dateString); %>
-        <% var momentObj = moment(dateObj); %>
-        <% var momentString = momentObj.format('MMM[.] Do[,] [\']YY') %>
-        <% var postId = posts.dataValues.id; %>
-        <% var postMood = posts.dataValues.mood %>
-        <% var postNotes = posts.dataValues.notes %>
+           <%})%>
+       <% } else { %>
+          <tr class="rows--journal__hover">
+            <td><p class="p--journal__none">Nothing logged yet...</p><p class="p--journal__none">Click the pen to create an entry!</td>
+          </tr>
+       <% } %> 
 
-        <tr class="rows--journal__hover">
-          <td><a href="/journal/view/<%= postId %>"><%= momentString %></a></td>
-          <td><a href="/journal/view/<%= postId %>"><%= postMood + " + " + postNotes %></a></td>
-        </tr>
-
-         <%})%>
-
-      </tbody>      
-    </table>
-
+        </tbody>      
+      </table>
   </div>
 </div>
 
