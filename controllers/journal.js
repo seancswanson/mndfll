@@ -1,6 +1,5 @@
 var express = require('express');
 var moment = require('moment');
-// var insertQuote = require('../middleware/insertQuote');
 var isLoggedIn = require('../middleware/isLoggedIn');
 var router = express.Router();
 var request = require('request');
@@ -11,15 +10,17 @@ router.use(require('express-jquery')('/jquery.js'));
 router.get('/all', function(req,res) {
   db.post.findAll({
     include: [db.user], 
-    order: '"createdAt" DESC'
+    order: [['createdAt', 'DESC']]
   }).then(function(posts){
-    // var quoteURL = 'https://quotes.rest/qod?category=inspire';
-    // request(quoteURL, function(error, response, body) {
-    //   console.log(body);
-    //   var quoteOfTheDay = '"' + body.contents.quotes[0].quote + '"' + " -" + body.contents.quotes[0].author;
-    // });
-    res.render('journal/all', {
-      posts:posts
+ var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
+    request(quoteURL, function(error, response, body) {
+      var quoteObj = JSON.parse(body);
+      console.log(quoteObj);
+      var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
+      res.render('journal/all', {
+        posts:posts,
+        quoteOfTheDay: quoteOfTheDay
+      });
     });
   });
 });
@@ -50,7 +51,13 @@ router.post('/all', isLoggedIn, function(req,res) {
 });
 
 router.get('/new', isLoggedIn, function(req,res) {
-  res.render('journal/new')
+  var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
+  request(quoteURL, function(error, response, body) {
+    var quoteObj = JSON.parse(body);
+    console.log(quoteObj);
+    var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
+  res.render('journal/new', { quoteOfTheDay: quoteOfTheDay});
+  });
 });
 
 router.get('/view/:id', function(req,res) {

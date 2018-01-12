@@ -1,4 +1,5 @@
 <%- include ../partials/prelogin-nav %>
+<%- include ../partials/alert %>
 
 <div class="container div--container__login-signup z-depth-2 fadein">
   <div class="section">
@@ -39,11 +40,13 @@
               <input class="btn-large btn--login waves-effect waves-plum waves-ripple" type="submit" value="Login"></div>
           </div>
 
-          <div class="col s4 offset-s6 "><a class="btn-large btn--signup" href="/auth/signup">Sign Up</a></div>
+          <div class="col s4 offset-s6 "><a class="btn-large btn--signup waves-effect waves-plum waves-ripple" href="/auth/signup">Sign Up</a></div>
           </div>
 
         </form>
       </div>
     </div>
+  </div>
 </div>
-</div>
+
+<%- include ../partials/documentEnd %>

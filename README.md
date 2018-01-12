@@ -1,5 +1,5 @@
-# MNDFLL
-A daily journaling app that serves as a organizer for goal setting, mood tracking, and day-to-day musings! Sign up and start journaling with MNDFLL today!
+# mndf.ll
+A daily journaling app that serves as a organizer for goal setting, mood tracking, and day-to-day musings! Sign up and start journaling with **mndf.ll** today!
 
 ![Title Screen](title.png)
 
@@ -11,7 +11,7 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
 
 ## Getting Started
 
-   To get started journaling with **MNDFLL**, you may please:
+   To get started journaling with **mndf.ll** you may please:
 
    1. Visit my DEPLOYED LINK
    
@@ -30,8 +30,8 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
   * CSS
   * JavaScript
   * Node
-  * Express & numerous Node modules
-  * 'They Said So' Quote API
+  * Express, Sequelize & numerous other Node modules
+  * [forismatic Quote API](http://forismatic.com/en/api/)
 
 ### Versioning
 

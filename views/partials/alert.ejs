@@ -1,0 +1,20 @@
+<% if(alerts.error) { %>
+  <% alerts.error.forEach(function(msg){ %>
+    <div class="container">
+      <div id="card-alert" class="card red lighten-5">
+        <div class="card-content red-text">
+            <p><%= msg %></p>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+<% } %>
+<% if(alerts.success) { %>
+  <% alerts.success.forEach(function(msg){ %>
+    <div id="card-alert" class="card green lighten-5">
+      <div class="card-content green-text">
+        <p><%= msg %></p>
+      </div>
+    </div>
+  <% }); %>
+<% } %>
