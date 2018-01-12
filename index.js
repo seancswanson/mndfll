@@ -15,7 +15,6 @@ var table = require('cli-table');
 var colors = require('colors');
 var request = require('request');
 var app = express();
-rowdy.begin(app);
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
