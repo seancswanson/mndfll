@@ -1,7 +1,7 @@
 # mndf.ll
 A daily journaling app that serves as a organizer for goal setting, mood tracking, and day-to-day musings! Sign up and start journaling with **mndf.ll** today!
 
-![Title Screen](title.png)
+![Title Screen](public/assets/landing.png)
 
 ![Example](example.png)
 
