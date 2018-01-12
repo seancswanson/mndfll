@@ -44,17 +44,12 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
-// app.get('/profile', isLoggedIn, function(req, res){
-//   res.render('profile');
-// });
-
 app.use('/auth', require('./controllers/auth'));
 app.use('/journal', require('./controllers/journal'));
 
 
 var server = app.listen(process.env.PORT || 3000, function() {
-    // console.log('////********** mndf.ll **********\\\\\\\\\\'.bgWhite.black);
-    // console.log('* an enlightening daily journaling app  *'.bgWhite.black);
-    // console.log('\\\\**** Sean Swanson || WDISEA-16****//'.bgWhite.black);
-    rowdy.print();
+    console.log('////********** mndf.ll **********\\\\\\\\\\'.bgWhite.black);
+    console.log('* an enlightening daily journaling app  *'.bgWhite.black);
+    console.log('\\\\**** Sean Swanson || WDISEA-16****//'.bgWhite.black);
 });
