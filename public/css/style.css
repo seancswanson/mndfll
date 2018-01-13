@@ -56,6 +56,11 @@ a.dropdown-button > ul > li > i {
   letter-spacing: 5px;
 }
 
+.nav--postlogin__user{
+  font-size: 19px !important;
+  margin-right: 4px !important;
+}
+
 #dropdown1 {
   top: 57px !important;
   right: 0 !important;
@@ -250,9 +255,7 @@ th {
   font-size: 40px;
   font-style: italic;
   position: relative !important;
-  top: 35px !important;
-  left: 35px !important;
-  margin-left: 20px;
+  left: 25px !important;
   letter-spacing: 3px;
 }
 
