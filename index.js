@@ -40,7 +40,7 @@ app.use(function(req,res,next){
 });
 
 app.get('/', function(req, res){
-  res.render('home');
+  res.render('home.ejs');
 });
 
 app.use('/auth', require('./controllers/auth'));
