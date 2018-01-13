@@ -20,11 +20,30 @@ body {
   color: #404040;;
 }
 
+.material-icons {
+  font-size: 50px !important;
+}
+
 /* Nav Bars */
 
 nav {
   background-color: #6d8764;
   z-index: 99;
+}
+
+a.dropdown-button > ul > li > i {
+  margin: 0;
+  padding: 0;
+}
+
+.brand-logo {
+  margin-left: 25px;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #404040 !important;
+  font-size: 20px;
+  text-transform: lowercase !important;
 }
 
 .nav--header__wide {
@@ -37,26 +56,11 @@ nav {
   letter-spacing: 5px;
 }
 
-a.dropdown-button > ul > li > i {
-  margin: 0;
-  padding: 0;
-}
-
-.dropdown-content li>a, .dropdown-content li>span {
-  color: #404040 !important;
-  font-size: 20px;
-  text-transform: lowercase !important;
-}
-.brand-logo {
-  margin-left: 25px;
-}
-
 #dropdown1 {
   top: 57px !important;
   right: 0 !important;
   left: initial !important;
 }
-
 
 /* Alerts Partial */
 
@@ -71,13 +75,8 @@ a.dropdown-button > ul > li > i {
 /* Home/Landing View */
 
 .div--landing {
-  margin-top: 40px;
+  margin-top: 25px;
   color: #404040;
-}
-
-.div--buttons__center {
-  position: relative !important;
-  left: 17px !important;
 }
 
 .card--landing {
@@ -90,14 +89,16 @@ a.dropdown-button > ul > li > i {
 }
 
 .card .card-title {
-    font-size: 28px;
-    letter-spacing: 2px;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.card-title__icon {
+  font-size: 50px;
 }
 
 .img--landing__yang {
   max-width: 150px;
-  position: relative;
-  left: 17px;
   -webkit-animation: rotation 10s infinite linear;
   -moz-animation: rotation 10s infinite linear;
   -ms-animation: rotation 10s infinite linear;
@@ -106,8 +107,7 @@ a.dropdown-button > ul > li > i {
 }
 
 .span--landing__title {
-  margin-left: 25px;
-  font-size: 70px;
+  font-size: 80px;
   letter-spacing: 4px;
   border-top: 4px double black;
   border-bottom: 4px double black;
@@ -116,8 +116,6 @@ a.dropdown-button > ul > li > i {
 .span--landing__subtitle {
   font-size: 30px;
   font-style: italic;
-  position: relative;
-  left: 17px;
 }
 
 /* Login/Signup View*/
@@ -134,16 +132,16 @@ a.dropdown-button > ul > li > i {
   width: 150px !important;
 }
 
-.span--login__signup {
-  position: relative !important;
-  left: 25px !important;
-  top: 15px;
-}
-
 .div--container__login-signup {
   margin-top: 40px;
   margin-bottom: 40px;
   color: #404040 !important;
+}
+
+.span--login__signup {
+  position: relative !important;
+  left: 25px !important;
+  top: 15px;
 }
 
 .span--login__title {
@@ -155,6 +153,20 @@ a.dropdown-button > ul > li > i {
 
 /* Journal/All View */
 
+table {
+  margin-bottom: 25px !important;
+}
+
+table.striped>tbody>tr:nth-child(odd) {
+   background-color: rgba(135,100,109,0.1) !important;
+   border-right: 2px solid rgba(135,100,109,0.1);
+}
+
+th {
+  font-size: 23px;
+  letter-spacing: 2px;
+  padding: 10px;
+}
 
 .a--journal__date{
   margin: 10px;
@@ -165,20 +177,26 @@ a.dropdown-button > ul > li > i {
   margin-bottom: 40px;  
 }
 
-table {
-  margin-bottom: 25px !important;
+.i--journal__new {
+  color: white;
+  background-color: rgba(104,35,96,1);
+  font-size: 50px;
+  padding: 15px 17px;
+  border: 2px dashed rgba(255,255,255,.5);
+  border-radius: 100%;
+  position: relative !important;
+  top: 130px !important;
+  left: 100px !important;
 }
 
-table.striped>tbody>tr:nth-child(odd) {
-   background-color: rgba(135,100,109,0.1) !important;
-   border-right: 2px solid rgba(135,100,109,0.1);
+.i--journal__new:hover {
+  border: 2px dashed rgba(104,35,96,.9);
 }
 
-
-th {
-  font-size: 23px;
+.p--journal__none {
+  font-size: 35px;
   letter-spacing: 2px;
-  padding: 10px;
+  margin: 0;
 }
 
 .rows--journal__hover {
@@ -221,28 +239,6 @@ th {
   margin-left: 30px;
   font-size: 23px;
   letter-spacing: 1px;
-}
-
-.p--journal__none {
-  font-size: 35px;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.i--journal__new {
-  color: white;
-  background-color: rgba(104,35,96,1);
-  font-size: 50px;
-  padding: 15px 17px;
-  border: 2px dashed rgba(255,255,255,.5);
-  border-radius: 100%;
-  position: relative !important;
-  top: 130px !important;
-  left: 100px !important;
-}
-
-.i--journal__new:hover {
-  border: 2px dashed rgba(104,35,96,.9);
 }
 
 .waves-effect.waves-new .waves-ripple {
@@ -312,13 +308,6 @@ margin-bottom: 0 !important;
   margin: 0 !important;
 }
 
-.span--single__title {
-  font-size: 50px;
-  margin-left: 20px;
-  border-bottom: 4px double black;
-  letter-spacing: 3px;
-}
-
 .p--single__label {
  font-size: 28px;
 }
@@ -342,10 +331,17 @@ margin-bottom: 0 !important;
  left: 10px !important;
 }
 
+.span--single__title {
+  font-size: 50px;
+  margin-left: 20px;
+  border-bottom: 4px double black;
+  letter-spacing: 3px;
+}
+
 /* Journal/New View*/
 
-#button--delete {
-  background-color: rgba(217, 30, 24,.8) !important;
+body > div.div--container__create.container.z-depth-3.fadein > div > div.container > div.section > form > div:nth-child(9) > div {
+  width: 100% !important;
 }
 
 .div--container__create {
@@ -400,6 +396,18 @@ margin-bottom: 0 !important;
   color: rgba(63,63,63,1) !important;
 }
 
+.p--modal__body {
+  color: rgba(59,59,59,1);
+  font-size: 17px !important;
+  letter-spacing: 1px !important;
+}
+
+.p--modal__source {
+ font-style: italic;
+ position: relative;
+ top: 20px;
+}
+
 .span--modal__title {
   font-size: 25px;
   margin-left: 4px;
@@ -431,9 +439,6 @@ margin-bottom: 0 !important;
   font-size: 22px !important;
 }
 
-body > div.div--container__create.container.z-depth-3.fadein > div > div.container > div.section > form > div:nth-child(9) > div {
-  width: 100% !important;
-}
 
 .textarea--journal__musings::placeholder {
   color: rgba(63,63,63,1);
@@ -443,31 +448,23 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
   font-size: 16px !important;
 }
 
-.p--modal__body {
-  color: rgba(59,59,59,1);
-  font-size: 17px !important;
-  letter-spacing: 1px !important;
-}
-
-.p--modal__source {
- font-style: italic;
- position: relative;
- top: 20px;
-}
-
 .ul--modal{
   color: rgba(59,59,59,1);
   list-style: disc;
   font-size: 18px !important;
 }
 
-#modal1 {
-  position: relative !important;
-  top: -80px !important;
+#button--delete {
+  background-color: rgba(217, 30, 24,.8) !important;
 }
 
 #form--journal__new > div:nth-child(9) > div {
   width: 100% !important;
+}
+
+#modal1 {
+  position: relative !important;
+  top: -80px !important;
 }
 
 /* Journal/Edit View*/
@@ -486,10 +483,6 @@ footer a {
 .page-footer, .footer-copyright {
   background-color: #6d8764 !important;
   padding-top: 5px !important;
-}
-
-.material-icons {
-  font-size: 50px !important;
 }
 
 /* Media Queries */
