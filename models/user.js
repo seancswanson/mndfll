@@ -17,13 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     }
-  // }, {
-  //   classMethods: {
-  //     associate: function(models) {
-  //       // associations can be defined here
-  //       models.user.hasMany(models.post);
-  //     }
-  //   }
   });
   user.associate = function(models) {
     models.user.hasMany(models.post, { through: models.userId });
