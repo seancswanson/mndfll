@@ -1,5 +1,9 @@
 /* Global */
 
+blockquote {
+  border-left: 5px solid #87646d;
+}
+
 body {
   font-family: "EB Garamond";
   display: flex;
@@ -72,9 +76,29 @@ a.dropdown-button > ul > li > i {
 #div--card__alert {
   position: absolute !important;
   top: 50px !important;
-  width: 250px !important;
+  width: 100% !important;
   font-size: 20px !important;
   z-index: 99 !important;
+}
+
+/* About View */
+
+.a--about {
+  color: black;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+.div--about__section {
+  font-size: 17px;
+  width: 80%;
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
+
+.p--about__body {
+  font-size: 20px !important;
 }
 
 /* Home/Landing View */

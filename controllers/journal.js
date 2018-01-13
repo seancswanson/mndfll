@@ -1,5 +1,6 @@
 var express = require('express');
-var moment = require('moment');
+// var moment = require('moment');
+var momentTimezone = require('moment-timezone');
 var isLoggedIn = require('../middleware/isLoggedIn');
 var router = express.Router();
 var request = require('request');
@@ -18,8 +19,16 @@ router.get('/all', isLoggedIn, function(req,res) {
       try {
         var quoteObj = JSON.parse(body);
         console.log(quoteObj);
-        var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
-        res.render('journal/all', {
+        if (quoteObj.quoteAuthor === 'Donald Trump'){
+          quoteObj.quoteAuthor = 'The Orange Man';
+          var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
+        } else if (quoteObj.quoteAuthor === '') {
+          quoteObj.quoteAuthor = 'unknown'
+          var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;          
+        } else {
+          var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
+         } 
+          res.render('journal/all', {
           posts:posts,
           quoteOfTheDay: quoteOfTheDay
         });

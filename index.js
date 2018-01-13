@@ -10,6 +10,7 @@ var isLoggedIn = require('./middleware/isLoggedIn');
 var passport = require('./config/passportConfig');
 var session = require('express-session');
 var moment = require('moment');
+var momentTimezone = require('moment-timezone');
 var db = require("./models");
 var table = require('cli-table');
 var colors = require('colors');
@@ -41,6 +42,10 @@ app.use(function(req,res,next){
 
 app.get('/', function(req, res){
   res.render('home');
+});
+
+app.get('/about', function(req, res){
+  res.render('about');
 });
 
 app.use('/auth', require('./controllers/auth'));

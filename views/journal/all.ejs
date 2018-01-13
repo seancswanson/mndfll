@@ -40,11 +40,11 @@
           </thead>
           <% posts.forEach(function(posts){ %> 
 
+          <% var tz = moment.tz.guess(); %>
           <% var dateString = posts.dataValues.createdAt; %>
-
           <% var dateObj = new Date(dateString); %>
           <% var momentObj = moment(dateObj); %>
-          <% var momentString = momentObj.format('MMM[.] Do[,] [\']YY') %>
+          <% var momentString = momentObj.tz(tz).format('MMM[.] Do[,] [\']YY') %>
                     <% console.log(momentObj) %>
           <% var postId = posts.dataValues.id; %>
           <% var postMood = posts.dataValues.mood %>
