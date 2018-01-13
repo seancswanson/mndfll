@@ -5,22 +5,31 @@
 <div class="div--container__journal container z-depth-3 fadein div--alpha">
   <div class="section">
     <div class="row">
-      <div class="col s12">
+      <div class="col s12 l6">
         <span class="span--journal__title"> Your Entries
         </span>
           <p class="span--journal__subtitle">
           click on an entry to view details
         </p>
       </div>
-      <div class="col s3">
+       <% for (let i=0; i <= (posts.length - posts.length); i++) { %>
+
+      <div class="col l6 hide-on-med-and-down">
+        <span class="span--journal__name">hello, <%= posts[0].user.dataValues.firstname %>
+        </span>
+      </div>
+      <% } %>
+    </div>
+
+    <div class="row">
+      <div class="col s3 offset-s9">
         <a href="/journal/new" class="gray-text">
           <i class="fa fa-pencil i--journal__new waves-effect waves-new waves-ripple" aria-hidden="true"></i>         
         </a>
       </div>
     </div>
-
   </div>
-  <div class="section">
+  <div class="section journal--all__section">
     <div class="divider"></div>
       <table class="striped bordered centered">
 

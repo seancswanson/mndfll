@@ -154,7 +154,7 @@ a.dropdown-button > ul > li > i {
 /* Journal/All View */
 
 table {
-  margin-bottom: 25px !important;
+  margin-bottom: -50px !important;
 }
 
 table.striped>tbody>tr:nth-child(odd) {
@@ -185,12 +185,17 @@ th {
   border: 2px dashed rgba(255,255,255,.5);
   border-radius: 100%;
   position: relative !important;
-  top: 130px !important;
-  left: 100px !important;
+  top: -50px !important;
+  right: 30px !important;
 }
 
 .i--journal__new:hover {
   border: 2px dashed rgba(104,35,96,.9);
+}
+
+.journal--all__section {
+  position: relative !important;
+  top: -80px !important;
 }
 
 .p--journal__none {
@@ -226,7 +231,7 @@ th {
   color: rgba(64,64,64,.8)
 }
 
-.span--journal__title {
+.span--journal__title  {
   font-size: 50px;
   margin-left: 20px;
   border-bottom: 4px double black;
@@ -239,6 +244,16 @@ th {
   margin-left: 30px;
   font-size: 23px;
   letter-spacing: 1px;
+}
+
+.span--journal__name {
+  font-size: 40px;
+  font-style: italic;
+  position: relative !important;
+  top: 35px !important;
+  left: 35px !important;
+  margin-left: 20px;
+  letter-spacing: 3px;
 }
 
 .waves-effect.waves-new .waves-ripple {
@@ -408,6 +423,13 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
  top: 20px;
 }
 
+.span--new__title {
+  font-size: 40px;
+  margin-left: 20px;
+  border-bottom: 4px double black;
+  letter-spacing: 3px;
+}
+
 .span--modal__title {
   font-size: 25px;
   margin-left: 4px;
@@ -432,11 +454,13 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
 
 .textarea--journal__musings {
   color: black;
-  margin-top: 10px !important;
+  margin-top: 40px !important;
   resize: vertical !important;
   min-height: 100px !important;
   padding: 10px 15px !important;
   font-size: 22px !important;
+  scroll-behavior: none;
+  overflow: auto;
 }
 
 

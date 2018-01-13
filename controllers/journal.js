@@ -53,13 +53,20 @@ router.post('/all', isLoggedIn, function(req,res) {
 });
 
 router.get('/new', isLoggedIn, function(req,res) {
-  var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
-  request(quoteURL, function(error, response, body) {
-    var quoteObj = JSON.parse(body);
-    console.log(quoteObj);
-    var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
-  res.render('journal/new', { quoteOfTheDay: quoteOfTheDay});
-  });
+    var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
+    request(quoteURL, function(error, response, body) {
+      try {
+        var quoteObj = JSON.parse(body);
+        console.log(quoteObj);
+        var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
+        res.render('journal/new', {quoteOfTheDay: quoteOfTheDay});
+      }
+      catch (err){
+        res.render('journal/new', {
+          quoteOfTheDay: '"Victory comes from finding opportunity in problems" - Sun Tzu'
+        });
+      }
+    });
 });
 
 router.get('/view/:id', isLoggedIn, function(req,res) {
