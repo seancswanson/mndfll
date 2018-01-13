@@ -1,0 +1,22 @@
+<% if(alerts.error) { %>
+  <% alerts.error.forEach(function(msg){ %>
+    <div class="container" id="div--card__alert">
+      <div id="card-alert" class="card red lighten-5">
+        <div class="card-content red-text">
+            <p><%= msg %></p>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+<% } %>
+<% if(alerts.success) { %>
+  <% alerts.success.forEach(function(msg){ %>
+    <div class="container" id="div--card__alert">
+      <div id="card-alert" class="card green lighten-5">
+        <div class="card-content green-text center-align">
+          <p><%= msg %></p>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+<% } %>
