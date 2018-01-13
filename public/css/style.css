@@ -13,7 +13,7 @@ body {
  }
 
 .div--alpha {
-  background:  rgba(255,255,255,.8) !important;
+  background: rgba(255,255,255,.8) !important;
 }
 
 .gray-text {
@@ -37,12 +37,6 @@ nav {
   letter-spacing: 5px;
 }
 
-#dropdown1 {
-  top: 57px !important;
-  right: 0 !important;
-  left: initial !important;
-}
-
 a.dropdown-button > ul > li > i {
   margin: 0;
   padding: 0;
@@ -56,6 +50,13 @@ a.dropdown-button > ul > li > i {
 .brand-logo {
   margin-left: 25px;
 }
+
+#dropdown1 {
+  top: 57px !important;
+  right: 0 !important;
+  left: initial !important;
+}
+
 
 /* Alerts Partial */
 
@@ -174,7 +175,7 @@ table.striped>tbody>tr:nth-child(odd) {
 }
 
 
-th{
+th {
   font-size: 23px;
   letter-spacing: 2px;
   padding: 10px;
@@ -434,10 +435,6 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
   width: 100% !important;
 }
 
-#form--journal__new > div:nth-child(9) > div {
-  width: 100% !important;
-}
-
 .textarea--journal__musings::placeholder {
   color: rgba(63,63,63,1);
   letter-spacing: 3px;
@@ -469,6 +466,10 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
   top: -80px !important;
 }
 
+#form--journal__new > div:nth-child(9) > div {
+  width: 100% !important;
+}
+
 /* Journal/Edit View*/
 
 #form--journal__edit > div:nth-child(9) > div {
@@ -476,6 +477,11 @@ body > div.div--container__create.container.z-depth-3.fadein > div > div.contain
 }
 
 /* Footer */
+
+footer a {
+  font-size: 18px !important;
+  letter-spacing: 2px !important;
+}
 
 .page-footer, .footer-copyright {
   background-color: #6d8764 !important;
