@@ -12,7 +12,14 @@
           click on an entry to view details
         </p>
       </div>
-    <% console.log(posts.user.firstname) %>
+       <% for (let i=-1; i <= (posts.length - posts.length); i++) { %>
+      <div class="col m3 l6 hide-on-small-only">
+        <span class="span--journal__name">hello, <%= posts[i].user.dataValues.firstname %>
+        </span>
+      </div>
+      <% } %>
+    </div>
+
     <div class="row">
       <div class="col s3 offset-s9">
         <a href="/journal/new" class="gray-text">
