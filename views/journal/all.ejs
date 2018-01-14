@@ -2,8 +2,8 @@
 <%- include ../partials/alert %>
 <%- include ../partials/quote %>
 
-<% var greeting = ['hello beautiful!','you are a winner!','you are lovely!','you are doing great!','keep up the good work!'] %>
-<% var randomGreeting = greeting[Math.random(greeting.length-1)]; { %>
+<% var tz = moment.tz.guess(); %>
+<% var CurrentDate = moment().tz(tz).format('MMM[.] Do[,] [\']YY') %>
 
 <div class="div--container__journal container z-depth-3 fadein div--alpha">
   <div class="section">
@@ -15,11 +15,10 @@
           click on an entry to view details
         </p>
       </div>
-      <div class="col m3 l6 hide-on-small-only">
-        <span class="span--journal__name"><%= randomGreeting %>
+      <div class="col m4 hide-on-small-only">
+        <span class="span--journal__date">Today is: <%= CurrentDate %>
         </span>
       </div>
-      <% } %>
     </div>
 
     <div class="row">

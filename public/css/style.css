@@ -60,8 +60,8 @@ a.dropdown-button > ul > li > i {
   letter-spacing: 5px;
 }
 
-.nav--postlogin__user{
-  font-size: 19px !important;
+.nav--postlogin__date{
+  font-size: 15px !important;
   margin-right: 4px !important;
 }
 
@@ -275,11 +275,12 @@ th {
   letter-spacing: 1px;
 }
 
-.span--journal__name {
-  font-size: 40px;
+.span--journal__date {
+  font-size: 18px;
+  border-bottom: 1px solid black;
   font-style: italic;
   position: relative !important;
-  left: 25px !important;
+  left: 10px !important;
   letter-spacing: 3px;
 }
 

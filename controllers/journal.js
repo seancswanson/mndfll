@@ -1,6 +1,7 @@
 var express = require('express');
 // var moment = require('moment');
 var momentTimezone = require('moment-timezone');
+var _ = require('underscore');
 var isLoggedIn = require('../middleware/isLoggedIn');
 var router = express.Router();
 var request = require('request');
