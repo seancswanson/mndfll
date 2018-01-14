@@ -17,9 +17,13 @@
         <span class="span--journal__name">hello, <%= posts[0].user.dataValues.firstname %>
         </span>
       </div>
-    <%}%>
+    <% } else { %>
+      <div class="col m3 l6 hide-on-small-only">
+        <span class="span--journal__name">get started below
+        </span>
+      </div>
     </div>
-
+    <% } %>
     <div class="row">
       <div class="col s3 offset-s9">
         <a href="/journal/new" class="gray-text">
