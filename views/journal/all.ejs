@@ -3,7 +3,7 @@
 <%- include ../partials/quote %>
 
 <% var greeting = ['hello beautiful!','you are a winner!','you are lovely!','you are doing great!','keep up the good work!'] %>
-<% var randomGreeting = greeting[greeting.random(greeting.length-1)]; { %>
+<% var randomGreeting = greeting[Math.random(greeting.length-1)]; { %>
 
 <div class="div--container__journal container z-depth-3 fadein div--alpha">
   <div class="section">
