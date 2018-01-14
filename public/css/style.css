@@ -279,8 +279,7 @@ th {
   font-size: 18px;
   border-bottom: 1px solid black;
   font-style: italic;
-  position: relative !important;
-  left: 10px !important;
+
   letter-spacing: 3px;
 }
 
