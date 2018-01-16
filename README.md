@@ -19,13 +19,12 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
    1. Visit the [Heroku site](https://mndfll-js.herokuapp.com)
    2. Fork and clone this repo, npm install dependencies, launch nodemon or other server.
    
-
 ## Prerequisites
 
-  A willingness to accept positive changes in your life.
-  Openness to personal enrichment through a daily practice
-  Tenacity to achieve your goals.
-  (Have NODE.js installed if cloning)
+  1. A willingness to accept positive changes in your life.
+  2. Openness to personal enrichment through a daily practice
+  3. Tenacity to achieve your goals.
+  4. (Have NODE.js installed if cloning)
 
 
 ## Built With
@@ -37,6 +36,11 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
   * Express, Sequelize & numerous other Node modules
   * RESTful API architecture practices
   * [forismatic Quote API](http://forismatic.com/en/api/)
+
+### User Stories
+
+> As a user, I want to be able to create an account to use this service.
+> As a user, I want to be able to create, view, update, and delete journal entries.
 
 ### Versioning
 
