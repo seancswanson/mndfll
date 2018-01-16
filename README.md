@@ -37,6 +37,11 @@ A daily journaling app that serves as a organizer for goal setting, mood trackin
   * RESTful API architecture practices
   * [forismatic Quote API](http://forismatic.com/en/api/)
 
+### Wireframes + User Flow
+
+![userflow](public/assets/wireframe1.png)
+![wireframes](public/assets/wireframe2.png)
+
 ### User Stories
 
 > As a user, I want to be able to create an account to use this service.
