@@ -132,13 +132,13 @@ var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&l
         var quoteObj = JSON.parse(body);
         console.log(quoteObj);
         var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
-        res.render('journal/all', {
+        res.render('journal/edit', {
           post:post,
           quoteOfTheDay: quoteOfTheDay
         });
       }
       catch (err){
-        res.render('journal/all', {
+        res.render('journal/edit', {
           post:post,
           quoteOfTheDay: '"Victory comes from finding opportunity in problems" - Sun Tzu'
         });
@@ -149,40 +149,6 @@ var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&l
     }); 
   });
 }); 
-
-// router.put('/view/:id',function(req,res) {
-//   console.log('PUT route!');
-//   console.log('ID = ', req.params.id);
-//   console.log('req.body is ', req.body);
-//   db.post.findOne({
-//     where: {id: req.params.id},
-//     include: [db.user],
-//     defaults: {
-//     location: req.body.location,
-//     mood: req.body.mood,
-//     goal: req.body.goal,
-//     priority1: req.body.priority1,
-//     priority2: req.body.priority2,
-//     priority3: req.body.priority3,
-//     notes: req.body.notes
-//     }
-//   }).spread(function(post, wasCreated){
-//     if(wasCreated){
-//       console.log(post);
-//     } else {
-//       location = req.body.location,
-//       mood = req.body.mood,
-//       goal = req.body.goal,
-//       priority1 = req.body.priority1,
-//       priority2 = req.body.priority2,
-//       priority3 = req.body.priority3,
-//       notes = req.body.notes
-//       post.save().then(function(updatedPost){
-//         console.log(updatedPost);
-//       })
-//     }
-//   }).catch(err);
-// });
 
 router.put('/view/:id',function(req,res) {
   console.log('PUT route!');
