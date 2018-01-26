@@ -1,11 +1,6 @@
 $( document ).ready(function() {
-  
-  console.log('update js');
-
-
   $('#form--journal__edit').submit(function(e) {
       e.preventDefault();
-      console.log('edit form ajax function');
       $.ajax({
         method: 'PUT',
         url: $(this).attr('action'),

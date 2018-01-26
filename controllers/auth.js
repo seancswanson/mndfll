@@ -20,7 +20,6 @@ router.get('/signup', function(req, res){
 });
 
 router.post('/signup', function(req, res, next){
-  console.log('req.body is', req.body);
   db.user.findOrCreate({
     where: { email: req.body.email },
     defaults: {
@@ -55,23 +54,3 @@ router.get('/logout', function(req, res){
 });
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

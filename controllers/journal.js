@@ -19,7 +19,6 @@ router.get('/all', isLoggedIn, function(req,res) {
     request(quoteURL, function(error, response, body) {
       try {
         var quoteObj = JSON.parse(body);
-        console.log(quoteObj);
         if (quoteObj.quoteAuthor === 'Donald Trump'){
           quoteObj.quoteAuthor = 'The Orange Man';
           var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
@@ -67,7 +66,6 @@ router.get('/new', isLoggedIn, function(req,res) {
     request(quoteURL, function(error, response, body) {
       try {
         var quoteObj = JSON.parse(body);
-        console.log(quoteObj);
         var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
         res.render('journal/new', {quoteOfTheDay: quoteOfTheDay});
       }
@@ -88,7 +86,6 @@ router.get('/view/:id', isLoggedIn, function(req,res) {
     request(quoteURL, function(error, response, body) {
       try {
         var quoteObj = JSON.parse(body);
-        console.log(quoteObj);
         var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
         res.render('journal/single', {
           post:post,
@@ -103,20 +100,16 @@ router.get('/view/:id', isLoggedIn, function(req,res) {
       }
     });
   }).catch(function(err) {
-    console.log('Catch reached, err was ', err);
     res.status(500).send('Uh oh! :(');
   }); 
 });
 
 router.delete('/view/:id', isLoggedIn, function(req,res){
-  console.log('Delete route. ID= ', req.params.id);
   db.post.destroy({
     where: { id: req.params.id }
   }).then(function(deleted){
-    console.log('deleted = ', deleted);
     res.send('success');
   }).catch(function(err){
-    console.log('An error happened', err);
     res.send('fail');
   })
 });
@@ -130,7 +123,6 @@ var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&l
     request(quoteURL, function(error, response, body) {
       try {
         var quoteObj = JSON.parse(body);
-        console.log(quoteObj);
         var quoteOfTheDay = '"' + quoteObj.quoteText + '"' + " -" + quoteObj.quoteAuthor;
         res.render('journal/edit', {
           post:post,
@@ -151,9 +143,6 @@ var quoteURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&format=json&l
 }); 
 
 router.put('/view/:id',function(req,res) {
-  console.log('PUT route!');
-  console.log('ID = ', req.params.id);
-  console.log('req.body is ', req.body);
   db.post.update({
     location: req.body.location,
     mood: req.body.mood,
@@ -164,8 +153,7 @@ router.put('/view/:id',function(req,res) {
     notes: req.body.notes
     },
     {
-    where: {id: req.params.id},
-    include: [db.user]
+    where: {id: req.params.id}
   }).then(function(){
     res.send('success');
   })
@@ -174,7 +162,6 @@ router.put('/view/:id',function(req,res) {
 
 router.delete('/view/:id', function(req,res) {
   res.send('Delete successfull');
-  // destroy where id = req.id
 })
 
 module.exports = router;

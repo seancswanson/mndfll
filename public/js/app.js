@@ -1,7 +1,5 @@
 $( document ).ready(function(){
 
-  console.log('app.js running');
-
   setTimeout(function(){$('#div--card__alert').fadeOut();}, 2000);
 
   $(".dropdown-button").dropdown();
@@ -15,14 +13,12 @@ $( document ).ready(function(){
       endingTop: '10%', // Ending top style attribute
       ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
         alert("Ready");
-        console.log(modal, trigger);
       },
       complete: function() { alert('Closed'); } // Callback for Modal close
     }
   );
 
   $('.button--delete').submit(function(e){
-    console.log('Delete button clicked');
     e.preventDefault();
     $.ajax({
       url: $(this).attr('action'),

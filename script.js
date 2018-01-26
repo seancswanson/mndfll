@@ -4,7 +4,6 @@ $( document ).ready(function(){
   document.getElementById('a--input__submit').addEventListener("click", function(e){
     e.preventDefault();
     document.getElementById('form--journal__new').submit();
-    console.log('clicked');
   });
 
 
@@ -19,7 +18,6 @@ $( document ).ready(function(){
       endingTop: '10%', // Ending top style attribute
       ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
         alert("Ready");
-        console.log(modal, trigger);
       },
       complete: function() { alert('Closed'); } // Callback for Modal close
     }
